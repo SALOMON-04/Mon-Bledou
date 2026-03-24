@@ -1,0 +1,383 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+    
+}
+
+body{
+   background-color:#e7e5e5 ;
+}
+
+
+/* Ici est le code css des mon entete(header) */
+
+ header a {
+    text-decoration: none;
+    color: black;
+}
+
+header a:hover {
+    color: blue;
+}
+
+.entete {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    
+
+}
+nav ul{
+  display: flex;
+  padding: 30px;
+  margin: 20px;
+  gap: 30px;
+  list-style: none;
+  transform: translate(-5%);
+ }
+
+.logo2 {
+    border-radius: 20%;
+    width: 130px;
+    height: 130px;
+}
+
+
+
+
+.grandI {
+
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10% ;
+
+}
+
+#Devenez {
+    font-size: 3em;
+}
+
+#réussite {
+    color: rgb(0, 81, 255);
+    font-size: 3em;
+}
+
+.gauche{
+
+    display: block;
+    justify-content: center;
+    margin-top: 4%;
+    height: 10%;
+}
+
+
+
+.motivation span {
+    display: flex;
+    font-size: clamp(1em, 3vw, 1.2em);
+    width: 500px;
+    padding-top: 3%;
+    
+
+    
+}
+
+.commencez {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    padding: 3%;
+    top: 5%;
+    width: 40%;
+    border-radius: 15px;
+    
+      
+}
+
+.commencez a {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: black;
+}
+
+.commencez  {
+   color: black; 
+   background-color: white;
+   
+}
+
+.commencez:hover {
+    background: rgb(0, 17, 255);
+    transform: scale(1.02);
+}
+
+
+
+.droite {
+     background-image: url(image/finance2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  width: 45%;
+  height: 400px;
+  display: flex;
+  border-radius: 10px;
+  font-size: clamp(1em, 3vw, 1.2em);
+  
+}
+
+.block {
+    border-radius: 15px ;
+     backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15%;
+    width: 40%;
+    padding: 1%;
+    margin-top: 65% ;
+    background: rgba(255, 255, 255, 0.426);
+    
+    
+}
+
+
+
+.trend {
+    
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(64, 241, 114, 0.734);
+}
+
+
+.milieu1 {
+    text-align: center;
+    font-size: clamp(1em, 3vw, 1.2em);
+    margin-top: 10%;
+   
+}
+
+.milieu1 span {
+    
+    opacity: 80%;
+    font-size: 30px;
+}
+
+
+       /* ici ce trouve l'agencement  de des petits bloc */
+
+.block2 {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10%;
+}
+
+.petitbloc {
+    background-color: #fff;
+    
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(152, 147, 147, 0.437);
+    width: 15%;
+    padding : 2%;
+    
+}
+
+
+
+
+#item  img{
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(1, 98, 255, 0.734);
+    width: 10%;
+     
+}
+
+.petitbloc h3{
+    padding-top: 5%;
+}
+.petitbloc span {
+    display: block;
+   padding-top: 5%;
+    font-size: 1em;
+   
+}
+
+#item .fa-chart-column {
+    
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(64, 241, 114, 0.627);
+    width: 10%;
+
+}
+
+#item .fa-piggy-bank {
+
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(191, 0, 255, 0.614);
+    width: 10%;
+    
+}
+
+#item .fa-book-atlas {
+
+
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 123, 0, 0.594);
+    width: 10%;
+    
+}
+
+       /* les modifications de la section grandII */
+
+.grandII {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10%;
+}
+
+.grandII img {
+    border-radius: 15px;
+    width: 45%;
+    height: 400px;
+}
+
+.motiver {
+    width: 40%; 
+    width: 45%;
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+    padding-top: 5%;
+    
+}
+
+.motiver ol {
+    padding-left: 0; 
+     list-style-position: inside;  /* Texte de l'élément suite du texte alignée en dehors du numéro */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+         /* les modification de la section qui emmène sur la page suivante */
+
+
+.suivant {
+    background-color: blue;
+    margin-top: 10%;      
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    text-align: center;   
+    gap: 20px;            
+}
+
+.suivant h2 {
+    width: 50%;
+} 
+      
+.suivant .gratuit:hover {
+    background-color: rgb(255, 255, 255);
+    transform: scale(1.02);
+}
+
+
+
+     /* ici se trouve les modification du footer */
+
+
+     footer {
+    padding: 5% 10% 2% 10% ;
+    padding-bottom: 2%; 
+    background-color: black;
+    display: flex;          
+    flex-direction: column;
+     padding: clamp(20px, 5%, 60px) clamp(15px, 10%, 100px);
+}
+
+.foot {
+    display: flex;
+    justify-content: space-around;
+     
+    align-items: flex-start; 
+}
+
+.fonction {
+    color: white;
+}
+
+.fonction h2 {
+    margin-bottom: 5%;
+    font-size: clamp(20px, 3vw, 30px);
+}
+
+.fonction span {
+    display: block;
+    padding-top: 10%;
+    text-align: left;
+    cursor: pointer;
+    color: #aaaaaaaa;
+}
+
+.fonction a {
+    text-decoration: none;
+    color: #aaaaaa;
+}
+
+.fonction a:hover {
+    color: rgb(249, 248, 248);
+}
+
+.ressource {
+    color: white;
+}
+
+.ressource h2 {
+    margin-bottom: 15px;
+    font-size: clamp(20px, 3vw, 30px);
+}
+
+.ressource span {
+    display: block;
+    padding-top: 5%;
+    text-align: left;
+    cursor: pointer;
+    color: #aaaaaaaa;
+}
+
+.ressource a:hover {
+    color: rgb(249, 248, 248);
+}
+
+.ressource a {
+    text-decoration: none;
+    color: #aaaaaa;
+}
+
+
+.copyrigth {
+    color: #ffffff;
+    text-align: center;
+    margin-top: auto; 
+    padding-top: 10px;
+}
+
+.copyrigth hr {
+    border-color: #444; 
+    margin-bottom: 15px;
+}
+
+
+
+
+

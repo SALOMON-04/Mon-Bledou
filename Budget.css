@@ -1,0 +1,262 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(229, 229, 229);
+}
+
+
+    /* Ici est le code css des mon entete(header) */
+
+ header a {
+    text-decoration: none;
+    color: black;
+}
+
+header a:hover {
+    color: blue;
+}
+
+.entete {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    
+
+}
+nav ul{
+  display: flex;
+  padding: 30px;
+  margin: 20px;
+  gap: 30px;
+  list-style: none;
+  transform: translate(-5%);
+ }
+
+.logo2 {
+    border-radius: 20%;
+    width: 130px;
+    height: 130px;
+}
+
+
+       /* la section enregistrement  */
+
+.Enregistrer {
+    display: flex;
+    justify-content: space-around;
+    gap: 30%;
+    padding: 6%;
+    
+}
+.titre {
+    font-size: 25px;
+}
+
+.titre h1 {
+
+    font-size: clamp(35px, 3vw, 40px);
+ }
+
+ .titre span {
+    font-size: 20px;
+ }
+
+
+ .Ajout {
+    
+    border-radius: 15px;
+    width: 15%;
+    padding: 2%;
+    text-align: center;
+    font-size: 1.2em;
+    font-size: clamp(10px, 3vw, 20px);
+    background-color: blue; 
+    
+ }
+
+ .Ajout:hover {
+     color: #ffffff;
+     transform: scale(1.02);
+     box-shadow: 0 4px 15px rgba(111, 111, 111, 0.74);
+     cursor: pointer;
+ }
+
+ .Ajout a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+ }
+
+
+       /* la section affichache */
+
+
+.indicateur {
+    display: flex;
+    justify-content:center ;
+    gap: 5%;
+
+
+}
+
+.balance {
+  
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(105, 105, 105, 0.05);
+  padding: 2%;
+  width: 15%;
+  height: 15%;
+  margin: 3%;
+  background-color: #ffffff;
+  font-size: clamp(10px, 3vw, 15px);
+  
+}
+
+.balance:hover {              
+     transform: scale(1.02);
+     box-shadow: 0 4px 15px rgba(129, 129, 129, 0.816);
+     
+}
+
+.wallet {
+    display: flex;
+    justify-content: space-between;
+    gap: 10%;
+}
+
+.wallet h2 {
+    margin-bottom: 5%;
+    font-size: clamp(20px, 3vw, 30px);
+ }
+
+
+
+.visuel {
+    padding-top: 10%;
+}
+
+
+
+#Dépense {
+    color: rgb(243, 0, 0);
+}
+ 
+#Restant{
+    color: rgb(14, 214, 44);
+}
+
+     
+     /* la section Transaction */
+
+
+.Transaction {
+    
+  align-items: center;
+  background-color: #ffffff;
+  max-width: 800px;
+  width: 80%;
+  margin: 40px auto;
+  padding: 60px 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(152, 147, 147, 0.437);
+
+}
+
+.transac i {
+    margin-left: 50%;
+    transform: translate(-50%);
+    font-size: 4em;
+  margin-bottom: 25px;
+
+}
+
+.texte {
+    text-align: center;
+}
+
+
+     /* le bas de la page (le footer) */
+
+
+footer {
+    padding: 5% 10% 2% 10% ;
+    padding-bottom: 2%; 
+    background-color: black;
+    display: flex;          
+    flex-direction: column;
+     padding: clamp(20px, 5%, 60px) clamp(15px, 10%, 100px);
+}
+
+.foot {
+    display: flex;
+    justify-content: space-around;
+     
+    align-items: flex-start; 
+}
+
+.fonction {
+    color: white;
+}
+
+.fonction h2 {
+    margin-bottom: 5%;
+    font-size: clamp(20px, 3vw, 30px);
+}
+
+.fonction span {
+    display: block;
+    padding-top: 10%;
+    text-align: left;
+    cursor: pointer;
+    color: #aaaaaaaa;
+}
+
+.fonction a {
+    text-decoration: none;
+    color: #aaaaaa;
+}
+
+.fonction a:hover {
+    color: rgb(249, 248, 248);
+}
+
+.ressource {
+    color: white;
+}
+
+.ressource h2 {
+    margin-bottom: 15px;
+    font-size: clamp(20px, 3vw, 30px);
+}
+
+.ressource span {
+    display: block;
+    padding-top: 5%;
+    text-align: left;
+    cursor: pointer;
+    color: #aaaaaaaa;
+}
+
+.ressource a:hover {
+    color: rgb(249, 248, 248);
+}
+
+.ressource a {
+    text-decoration: none;
+    color: #aaaaaa;
+}
+
+
+.copyrigth {
+    color: #ffffff;
+    text-align: center;
+    margin-top: auto; 
+    padding-top: 10px;
+}
+
+.copyrigth hr {
+    border-color: #444; 
+    margin-bottom: 15px;
+}
