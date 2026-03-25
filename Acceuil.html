@@ -8,15 +8,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 </head>
 <body>
-   
+
+
+      <!--  overlay,  pour que le script retrouve et modifi l'élément (id) et pour le styliser (classe)  -->
+  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+  <!-- panneau menu latéral -->
+  <div class="menu-lateral" id="menuLateral">
+    <button class="fermer-btn" onclick="toggleMenu()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <nav class="nav-lateral">
+      
+      <!-- le onclick(represente l'evenement du clic)="toggleMenu()"(est la fonction JS qui execute le clique et donne l'animation),
+        les iconnesont là pour armoniser chaque élément  -->
+
+      <ul>
+        <li><a href="" onclick="toggleMenu()"><i class="fa-solid fa-house"></i> Accueil</a></li>
+        <li><a href="Tableau de bord.html" onclick="toggleMenu()"><i class="fa-solid fa-chart-line"></i> Tableau de bord</a></li>
+        <li><a href="Budget.html" onclick="toggleMenu()"><i class="fa-solid fa-wallet"></i> Budget</a></li>
+        <li><a href="Epargne.html" onclick="toggleMenu()"><i class="fa-solid fa-piggy-bank"></i> Epargne</a></li>
+        <li><a href="Transaction.html" onclick="toggleMenu()"><i class="fa-solid fa-right-left"></i> Transaction</a></li>
+        <li><a href="" onclick="toggleMenu()"><i class="fa-solid fa-graduation-cap"></i> Formation</a></li>
+      </ul>
+    </nav>
+  </div>
+       
     <header>
       <div class="entete">
         <img class="logo2" src="image/logo2.jpeg" alt="mon logo" />
+         
+        <!--  <button class="hamburger"> par ceci : -->
 
-        <nav>
+               <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+        <nav id="menu">
           <ul>
             <li><a href="">Acceuil</a></li>     <!--   il y a un lien a mettre ici -->
-            <li><a href="Tableau de bord.html">Tableau de bord</a></li>    <!--   il y a un lien a mettre ici -->
+            <li><a href="Tbleau de bord.html">Tableau de bord</a></li>    <!--   il y a un lien a mettre ici -->
             <li><a href="Budget.html">Budget</a></li>     <!--   il y a un lien a mettre ici -->
             <li><a href="Epargne.html">Epargne</a></li>     <!--   il y a un lien a mettre ici -->
             <li><a href="Transaction.html">Transaction</a></li>     <!--   il y a un lien a mettre ici -->
@@ -48,7 +77,7 @@
             </div>
 
             <div class="commencez">
-                <a href=""><span>Commencez gratuitement</span></a>
+                <a href="Tableau de bord.html"><span>Commencez gratuitement</span></a>
             </div>
         </div>
 
@@ -158,7 +187,7 @@
            <span>Rejoignez mont bledou.com dès aujourd'hui et commencez à gérer votre argent intelligemment.</span>
             
            <div class="commencez gratuit">
-                <a href=""><span>Commencez gratuitement</span></a>
+                <a href="Tableau de bord.html"><span>Commencez gratuitement</span></a>
             </div>
 
        </section>
@@ -171,17 +200,17 @@
         <section class="foot">
           <div class="fonction">
             <h2>Fontionnalité</h2>
-            <span><a href="">Tableau de bord</a></span>   <!--   il y a un lien a mettre ici -->
-            <span><a href="">Gestion du budget</a></span>  <!--   il y a un lien a mettre ici -->
-            <span><a href="">Transaction</a></span>     <!--   il y a un lien a mettre ici -->
-            <span><a href="">Objectif d'épargne</a></span>    <!--   il y a un lien a mettre ici -->
+            <span><a href="Tableau de bord.html">Tableau de bord</a></span>   <!--   il y a un lien a mettre ici -->
+            <span><a href="Budget.html">Gestion du budget</a></span>  <!--   il y a un lien a mettre ici -->
+            <span><a href="Transaction.html">Transaction</a></span>     <!--   il y a un lien a mettre ici -->
+            <span><a href="Epargne.html">Objectif d'épargne</a></span>    <!--   il y a un lien a mettre ici -->
           </div>
 
           <div class="ressource">
 
             <h2>Ressource</h2>
              <span><a href="">Formation</a></span>  <!--   il y a un lien a mettre ici -->
-            <span><a href="">Commencer</a></span>   <!--   il y a un lien a mettre ici -->
+            <span><a href="Tableau de bord.html">Commencer</a></span>   <!--   il y a un lien a mettre ici -->
           </div>
 
         </section>
@@ -192,8 +221,19 @@
 
       </footer>
 
+     <!-- Cette  fonction JavaScript nous permettras de solidiffier le humberger -->
 
-
+     
+     
+            <script>
+              function toggleMenu() {
+                document.getElementById('menuLateral').classList.toggle('ouvert');
+                document.getElementById('overlay').classList.toggle('actif');
+                document.body.style.overflow =
+                  document.getElementById('menuLateral').classList.contains('ouvert')
+                  ? 'hidden' : '';
+              }
+            </script>
 
 </body>
 </html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Ajoujout-Transaction.css">
+</head>
+<body>
+    
+     <div class="Ajout">
+        
+
+        <!-- MODALE -->
+        <div class="modale-overlay" id="modaleOverlay">
+            <div class="modale">
+
+                <div class="modale-entete">
+                    <div>
+                        <h2>Ajouter une transaction</h2>
+                        <span>Entrez les détails de votre transaction</span>
+                    </div>
+                    <button class="modale-fermer">✕</button>
+                </div>
+
+                <div class="toggle">
+                    <button class="toggle-btn actif">Dépense</button>
+                    <button class="toggle-btn">Revenu</button>
+                </div>
+
+                <div class="modale-form">
+
+                    <div class="champ">
+                        <label>Montant (€)</label>
+                        <input type="number" placeholder="0.00" />
+                    </div>
+
+                    <div class="champ">
+                        <label>Catégorie</label>
+                        <select>
+                            <option value="">Sélectionnez une catégorie</option>
+                            <option>Alimentation</option>
+                            <option>Transport</option>
+                            <option>Loisirs</option>
+                            <option>Santé</option>
+                        </select>
+                    </div>
+
+                    <div class="champ">
+                        <label>Description</label>
+                        <input type="text" placeholder="Ex: Courses du mois" />
+                    </div>
+
+                    <div class="champ">
+                        <label>Date</label>
+                        <input type="date" value="2026-03-24" />
+                    </div>
+
+                    <button class="modale-ajouter">Ajouter</button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transaction Modal</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --blue: #1A6EF5;
+      --blue-dark: #1459cc;
+      --blue-light: #e8f0fe;
+      --gray-bg: #f4f6fa;
+      --gray-border: #e2e6ef;
+      --gray-text: #8a93a8;
+      --text: #1a1d2e;
+      --white: #ffffff;
+      --shadow: 0 8px 40px rgba(26,110,245,0.13), 0 2px 12px rgba(0,0,0,0.08);
+      --radius: 14px;
+      --radius-sm: 8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--gray-bg);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Bouton déclencheur */
+    .btn-add {
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      padding: 13px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      letter-spacing: 0.2px;
+      transition: background 0.18s, transform 0.12s, box-shadow 0.18s;
+      box-shadow: 0 2px 12px rgba(26,110,245,0.22);
+    }
+    .btn-add:hover {
+      background: var(--blue-dark);
+      box-shadow: 0 4px 20px rgba(26,110,245,0.32);
+      transform: translateY(-1px);
+    }
+    .btn-add:active { transform: translateY(0); }
+
+    /* Overlay */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 30, 60, 0.38);
+      backdrop-filter: blur(3px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+    }
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* Modal */
+    .modal {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 32px 32px 28px;
+      width: 100%;
+      max-width: 470px;
+      box-shadow: var(--shadow);
+      position: relative;
+      transform: translateY(24px) scale(0.97);
+      transition: transform 0.26s cubic-bezier(.34,1.4,.64,1), opacity 0.22s ease;
+      opacity: 0;
+    }
+    .modal-overlay.open .modal {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+
+    /* En-tête */
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+    .modal-title { font-size: 20px; font-weight: 700; color: var(--text); }
+    .modal-subtitle { font-size: 13.5px; color: var(--gray-text); margin-top: 3px; }
+
+    .btn-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--gray-text);
+      font-size: 20px;
+      padding: 2px 6px;
+      border-radius: 6px;
+      transition: background 0.14s, color 0.14s;
+      line-height: 1;
+    }
+    .btn-close:hover { background: var(--gray-bg); color: var(--text); }
+
+    /* Toggle Dépense / Revenu */
+    .toggle-group {
+      display: flex;
+      background: var(--gray-bg);
+      border-radius: 50px;
+      padding: 5px;
+      margin: 20px 0 22px;
+    }
+    .toggle-btn {
+      flex: 1;
+      padding: 10px 0;
+      border: none;
+      background: none;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: inherit;
+      color: var(--gray-text);
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+    }
+    .toggle-btn.active {
+      background: var(--white);
+      color: var(--text);
+      box-shadow: 0 1px 6px rgba(0,0,0,0.10);
+    }
+
+    /* Champs */
+    .field { margin-bottom: 18px; }
+    .field label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 7px;
+    }
+    .field input,
+    .field select {
+      width: 100%;
+      padding: 13px 16px;
+      background: var(--gray-bg);
+      border: 1.5px solid transparent;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-family: inherit;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.16s, background 0.16s;
+      appearance: none;
+    }
+    .field input::placeholder,
+    .field select option[value=""] { color: var(--gray-text); }
+    .field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238a93a8' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; cursor: pointer; }
+    .field input:focus,
+    .field select:focus {
+      border-color: var(--blue);
+      background: var(--white);
+    }
+
+    /* Bouton Ajouter */
+    .btn-submit {
+      width: 100%;
+      padding: 15px;
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 16px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      margin-top: 6px;
+      letter-spacing: 0.2px;
+      transition: background 0.18s, transform 0.12s, box-shadow 0.18s;
+      box-shadow: 0 2px 14px rgba(26,110,245,0.22);
+    }
+    .btn-submit:hover {
+      background: var(--blue-dark);
+      box-shadow: 0 4px 22px rgba(26,110,245,0.32);
+      transform: translateY(-1px);
+    }
+    .btn-submit:active { transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- Bouton déclencheur -->
+  <button class="btn-add" id="openModal">+ Nouvelle transaction</button>
+
+  <!-- Modal Overlay -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+      <div class="modal-header">
+        <div>
+          <div class="modal-title" id="modalTitle">Ajouter une transaction</div>
+          <div class="modal-subtitle">Entrez les détails de votre transaction</div>
+        </div>
+        <button class="btn-close" id="closeModal" aria-label="Fermer">&#x2715;</button>
+      </div>
+
+      <!-- Toggle Dépense / Revenu -->
+      <div class="toggle-group" role="group" aria-label="Type de transaction">
+        <button class="toggle-btn active" id="btnDepense">Dépense</button>
+        <button class="toggle-btn" id="btnRevenu">Revenu</button>
+      </div>
+
+      <!-- Montant -->
+      <div class="field">
+        <label for="montant">Montant (€)</label>
+        <input type="number" id="montant" placeholder="0.00" min="0" step="0.01"/>
+      </div>
+
+      <!-- Catégorie -->
+      <div class="field">
+        <label for="categorie">Catégorie</label>
+        <select id="categorie">
+          <option value="">Sélectionnez une catégorie</option>
+          <option>Alimentation</option>
+          <option>Transport</option>
+          <option>Logement</option>
+          <option>Loisirs</option>
+          <option>Santé</option>
+          <option>Salaire</option>
+          <option>Autre</option>
+        </select>
+      </div>
+
+      <!-- Description -->
+      <div class="field">
+        <label for="description">Description</label>
+        <input type="text" id="description" placeholder="Ex: Courses du mois"/>
+      </div>
+
+      <!-- Date -->
+      <div class="field">
+        <label for="date">Date</label>
+        <input type="date" id="date"/>
+      </div>
+
+      <button class="btn-submit" id="btnAjouter">Ajouter</button>
+    </div>
+  </div>
+
+  <script>
+    const overlay = document.getElementById('modalOverlay');
+    const openBtn = document.getElementById('openModal');
+    const closeBtn = document.getElementById('closeModal');
+    const btnDepense = document.getElementById('btnDepense');
+    const btnRevenu = document.getElementById('btnRevenu');
+    const dateInput = document.getElementById('date');
+
+    // Date du jour par défaut
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.value = today;
+
+    // Ouvrir
+    openBtn.addEventListener('click', () => overlay.classList.add('open'));
+
+    // Fermer (croix)
+    closeBtn.addEventListener('click', () => overlay.classList.remove('open'));
+
+    // Fermer (clic en dehors)
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) overlay.classList.remove('open');
+    });
+
+    // Fermer (Échap)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') overlay.classList.remove('open');
+    });
+
+    // Toggle Dépense / Revenu
+    btnDepense.addEventListener('click', () => {
+      btnDepense.classList.add('active');
+      btnRevenu.classList.remove('active');
+    });
+    btnRevenu.addEventListener('click', () => {
+      btnRevenu.classList.add('active');
+      btnDepense.classList.remove('active');
+    });
+
+    // Bouton Ajouter
+    document.getElementById('btnAjouter').addEventListener('click', () => {
+      const montant = document.getElementById('montant').value;
+      const categorie = document.getElementById('categorie').value;
+      const description = document.getElementById('description').value;
+      const date = dateInput.value;
+      const type = btnDepense.classList.contains('active') ? 'Dépense' : 'Revenu';
+
+      if (!montant || montant <= 0) { alert('Veuillez entrer un montant valide.'); return; }
+      if (!categorie) { alert('Veuillez sélectionner une catégorie.'); return; }
+
+      console.log({ type, montant, categorie, description, date });
+      alert(`Transaction ajoutée !\n${type} · ${montant}€ · ${categorie}`);
+      overlay.classList.remove('open');
+    });
+  </script>
+</body>
+</html>

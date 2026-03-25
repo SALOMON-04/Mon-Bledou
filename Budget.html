@@ -3,23 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Budget</title>
     <link rel="stylesheet" href="Budget.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
   </head>
-
+      
   <body>
+
+
+        
+         <!--  overlay,  pour que le script retrouve et modifi l'élément (id) et pour le styliser (classe)  -->
+
+   <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+   <!--  panneau menu latéral -->
+
+   <div class="menu-lateral" id="menuLateral">
+    <button class="fermer-btn" onclick="toggleMenu()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <nav class="nav-lateral">
+
+         <!-- le onclick(represente l'evenement du clic)="toggleMenu()"(est la fonction JS qui execute le clique et donne l'animation),
+         les iconnesont là pour armoniser chaque élément  -->
+
+      <ul>
+        <li><a href="Acceuil.html" onclick="toggleMenu()"><i class="fa-solid fa-house"></i> Accueil</a></li>
+        <li><a href="" onclick="toggleMenu()"><i class="fa-solid fa-chart-line"></i> Tableau de bord</a></li>
+        <li><a href="Budget.html" onclick="toggleMenu()"><i class="fa-solid fa-wallet"></i> Budget</a></li>
+        <li><a href="Epargne.html" onclick="toggleMenu()"><i class="fa-solid fa-piggy-bank"></i> Epargne</a></li>
+        <li><a href="Transaction.html" onclick="toggleMenu()"><i class="fa-solid fa-right-left"></i> Transaction</a></li>
+        <li><a href="" onclick="toggleMenu()"><i class="fa-solid fa-graduation-cap"></i> Formation</a></li>
+      </ul>
+    </nav>
+  </div>
+         <!-- le  corps principal de  mon header -->
+
     <header>
       <div class="entete">
         <img class="logo2" src="image/logo2.jpeg" alt="mon logo" />
 
+        <!--  <button class="hamburger"> par ceci : -->
+
+               <button class="hamburger" onclick="toggleMenu()">☰</button>
+
         <nav>
           <ul>
-            <li><a href="">Acceuil</a></li>     <!--   il y a un lien a mettre ici -->
-            <li><a href="">Tableau de bord</a></li>    <!--   il y a un lien a mettre ici -->
+            <li><a href="Acceuil.html">Acceuil</a></li>     <!--   il y a un lien a mettre ici -->
+            <li><a href="Tbleau de bord.html">Tableau de bord</a></li>    <!--   il y a un lien a mettre ici -->
             <li><a href="">Budget</a></li>     <!--   il y a un lien a mettre ici -->
-            <li><a href="">Epargne</a></li>     <!--   il y a un lien a mettre ici -->
-            <li><a href="">Transaction</a></li>     <!--   il y a un lien a mettre ici -->
+            <li><a href="Epargne.html">Epargne</a></li>     <!--   il y a un lien a mettre ici -->
+            <li><a href="Transaction.html">Transaction</a></li>     <!--   il y a un lien a mettre ici -->
             <li><a href="">formation</a></li>     <!--   il y a un lien a mettre ici -->
           </ul>
         </nav>
@@ -120,7 +154,17 @@
 
       </footer>
 
+          <!-- Cette  fonction JavaScript nous permettras de solidiffier le humberger -->
 
+            <script>
+              function toggleMenu() {
+                document.getElementById('menuLateral').classList.toggle('ouvert');
+                document.getElementById('overlay').classList.toggle('actif');
+                document.body.style.overflow =
+                  document.getElementById('menuLateral').classList.contains('ouvert')
+                  ? 'hidden' : '';
+              }
+            </script>
 
   </body>
 </html>
