@@ -242,7 +242,7 @@ nav ul{
     justify-content: space-around;
     align-items: center;
     height: 15%;
-    width: 40%;
+    width: 45%;
     padding: 1%;
     margin-top: 65% ;
     background: rgba(255, 255, 255, 0.426);
@@ -256,7 +256,14 @@ nav ul{
     
     padding: 15px;
     border-radius: 10px;
-    background-color: rgba(64, 241, 114, 0.734);
+    background-color: rgba(0, 255, 72, 0.307);
+}
+
+.ressette h3 {
+    font-size: clamp(1em, 3vw, 0.5em);
+}
+.ressette span {
+    font-size: clamp(1em, 3vw, 0.5em);
 }
    
 
@@ -733,6 +740,12 @@ nav ul {
     }
 
     /* section grandI */
+
+    .block {
+        margin-top: 55% ;
+        width: 55%;
+        padding: 3%;
+    }
 
     #Devenez, #réussite {
         font-size: 1.5em;

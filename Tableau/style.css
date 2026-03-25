@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -5,10 +6,8 @@
 
 body {
     background-color: rgb(229, 229, 229);
+    font-family: 'Poppins',sans-serif !important;
 }
-
-
-    /* Ici est le code css des mon entete(header) */
 
  header a {
     text-decoration: none;
@@ -24,9 +23,10 @@ header a:hover {
     justify-content: space-between;
     margin-left: 10%;
     
+
 }
 
-/*  ici se trouve mon le style de mon menu cachez */
+  /*  ici se trouve mon le style de mon menu cachez */
     
 .hamburger {
   display: none;
@@ -125,8 +125,7 @@ header a:hover {
   color: rgb(177, 177, 176);
 }
  
-  
-    /* le style principal de mon header */
+  /* le style principal de mon header */
 
 nav ul{
   display: flex;
@@ -143,18 +142,12 @@ nav ul{
     height: 130px;
 }
 
+   /* le style du titre Tableau de bord */
 
-       /* la section enregistrement  */
-
-.Enregistrer {
-    display: flex;
-    justify-content: space-around;
-    gap: 30%;
-    padding: 6%;
-    
-}
 .titre {
     font-size: 25px;
+    padding: 6%;
+
 }
 
 .titre h1 {
@@ -162,46 +155,13 @@ nav ul{
     font-size: clamp(35px, 3vw, 40px);
  }
 
- .titre span {
-    font-size: 20px;
- }
-
-
- .Ajout {
-    
-    border-radius: 15px;
-    width: 15%;
-    padding: 2%;
-    text-align: center;
-    font-size: 1.2em;
-    font-size: clamp(10px, 3vw, 20px);
-    background-color: blue; 
-    
- }
-
- .Ajout:hover {
-     color: #ffffff;
-     transform: scale(1.02);
-     box-shadow: 0 4px 15px rgba(111, 111, 111, 0.74);
-     cursor: pointer;
- }
-
- .Ajout a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
- }
-
-
-       /* la section affichache */
-
-
 .indicateur {
     display: flex;
-    justify-content:center ;
-    gap: 5%;
-
+    justify-content:column ;
 
 }
+
+     /* ici se trouve le style de ma section affichage */
 
 .balance {
   
@@ -212,14 +172,11 @@ nav ul{
   height: 15%;
   margin: 3%;
   background-color: #ffffff;
-  font-size: clamp(10px, 3vw, 15px);
-  
 }
 
 .balance:hover {              
-     transform: scale(1.02);
+    transform: scale(1.02);
      box-shadow: 0 4px 15px rgba(129, 129, 129, 0.816);
-     
 }
 
 .wallet {
@@ -233,24 +190,32 @@ nav ul{
     font-size: clamp(20px, 3vw, 30px);
  }
 
+.wallet img {
+    height: 30px;
+}
 
+.wallet i {
+  font-size: 20px;
+}
 
 .visuel {
     padding-top: 10%;
 }
 
-
+#Epargne {
+    color: rgb(120, 0, 232);
+}
 
 #Dépense {
     color: rgb(243, 0, 0);
 }
  
-#Restant{
+#Revenus{
     color: rgb(14, 214, 44);
 }
 
-     
-     /* la section Transaction */
+
+     /* ici se trouve le style de la section .Transaction */
 
 
 .Transaction {
@@ -266,11 +231,12 @@ nav ul{
 
 }
 
-.transac i {
+.transac img {
     margin-left: 50%;
     transform: translate(-50%);
-    font-size: 4em;
-  margin-bottom: 25px;
+    width: 80px;             
+    height: 80px;
+    margin-bottom: 25px;
 
 }
 
@@ -279,7 +245,7 @@ nav ul{
 }
 
 
-     /* le bas de la page (le footer) */
+     /* ici se trouve le style de mon footer */
 
 
 footer {
@@ -369,22 +335,48 @@ footer {
 
 
 
-       /* ONDINATEUR DE BUREAU (max 1440px)*/
+          
+     /* le menu en hamburger au niveau du header */
+
+@media (max-width: 768px) {
+
+    .hamburger {
+  display: flex;  /* ← flex et non block pour aligner les bars vertical */
+  font-size: 2em;
+
+}
+
+nav ul {
+  display: none;  /* ← cache la nav bureau */
+}
+
+ }
+
+
+     /* BUREAU (max 1440px) */
 
 @media (max-width: 1440px) {
 
-       /* Section titre + bouton */
+       /* Titre */
 
-    .Enregistrer {
-        gap: 20%;
-        padding: 5%;
+    .titre {
+        padding: 4%;
     }
 
-       /* Les 3 cartes */
+    .titre h1 {
+        font-size: 35px;
+    }
+
+       /* Les 4 cartes */
+
+    .indicateur {
+        display: flex;
+        justify-content: center;
+    }
 
     .balance {
-        width: 20%;
-        min-width: 200px;
+        width: 18%;
+        min-width: 180px;
     }
 
        /* Bloc vide */
@@ -407,46 +399,39 @@ footer {
 }
 
 
-
-/*PC PERSONNEL (max 1024px) */
+   /* PC PERSONNEL (max 1024px) */
 
 @media (max-width: 1024px) {
 
-       /* Section titre + bouton */
+      /* Titre */
 
-    .Enregistrer {
-        gap: 15%;
-        padding: 4%;
+    .titre {
+        padding: 4% 5%;
     }
 
     .titre h1 {
         font-size: 28px;
     }
 
-    .Ajout {
-        width: 20%;
-        padding: 15px;
-    }
-
-       /* Les 3 cartes */
+       /* Les 4 cartes */
 
     .balance {
-        width: 25%;
-        min-width: 180px;
+        width: 22%;
+        min-width: 160px;
     }
 
     .wallet h2 {
         font-size: 16px;
     }
 
-       /* Bloc vide */
+      /* Bloc vide */
 
     .Transaction {
         width: 82%;
         padding: 45px 30px;
     }
 
-       /* Footer */
+      /* Footer */
 
     .foot {
         justify-content: space-around;
@@ -460,23 +445,67 @@ footer {
 }
 
 
-     /* TABLETTE (max 768px) */
+
+/* TABLETTE (max 768px) */
 
 @media (max-width: 768px) {
 
-      .hamburger {
-        display: block;  
+      /* Titre */
+
+    .titre {
+        padding: 5% 5%;
     }
 
-    nav ul {
-        display: none;  
+    .titre h1 {
+        font-size: 25px;
     }
-     .entete {
+
+       /* Les 4 cartes */
+
+    .indicateur {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .balance {
+        width: 40%;
+        min-width: 150px;
+        margin: 10px;
+    }
+
+    .wallet h2 {
+        font-size: 15px;
+    }
+
+       /* Bloc vide */
+
+    .Transaction {
+        width: 88%;
+        padding: 40px 25px;
+    }
+
+       /* Footer */
+
+    .foot {
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+
+
+   /* MOBILE (max 480px) */
+
+@media (max-width: 480px) {
+
+    .entete {
        
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
-        padding: 8px 15px;
+        padding: 10px 15px;
         margin-left: 0;
         gap: 50%;
         
@@ -500,87 +529,9 @@ footer {
         height: 80px;
     }
 
-         /* Section titre + bouton */
+      /* Titre */
 
-    .Enregistrer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-        padding: 5% 5%;
-    }
-
-    .titre h1 {
-        font-size: 25px;
-    }
-
-    .titre span {
-        font-size: 16px;
-    }
-
-    .Ajout {
-        width: auto;
-        padding: 12px 20px;
-    }
-
-        /* Les 3 cartes */
-
-    .indicateur {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .balance {
-        width: 40%;
-        min-width: 150px;
-        margin: 10px;
-    }
-
-       /* Bloc vide */
-
-    .Transaction {
-        width: 88%;
-        padding: 40px 25px;
-    }
-
-       /* Footer */
-
-    .foot {
-        flex-direction: row;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-}
-
-
-       /* MOBILE (max 480px) */
-
-@media (max-width: 480px) {
-
-       /* Header */
-
-    .entete {
-        justify-content: space-between;
-        align-items: center;
-        padding: 8px 15px;
-        margin-left: 0;
-    }
-
-    .hamburger {
-        display: block;
-        font-size: 2em;
-    }
-
-    .logo2 {
-        width: 70px;
-        height: 70px;
-    }
-
-       /* Section titre + bouton */
-
-    .Enregistrer {
-        flex-direction: column;
-        gap: 15px;
+    .titre {
         padding: 6% 5%;
     }
 
@@ -592,13 +543,7 @@ footer {
         font-size: 13px;
     }
 
-    .Ajout {
-        width: auto;
-        padding: 12px 20px;
-        font-size: 13px;
-    }
-
-       /* Les 3 cartes en colonne */
+       /* Les 4 cartes en colonne */
 
     .indicateur {
         flex-direction: column;
@@ -619,7 +564,7 @@ footer {
         font-size: 20px;
     }
 
-       /* Bloc vide */
+      /* Bloc vide */
 
     .Transaction {
         width: 92%;
@@ -627,8 +572,9 @@ footer {
         margin: 25px auto;
     }
 
-    .transac i {
-        font-size: 3em;
+    .transac img {
+        width: 60px;
+        height: 60px;
     }
 
     .texte h3 {
@@ -639,7 +585,7 @@ footer {
         font-size: 13px;
     }
 
-        /* Footer */
+      /* Footer */
 
     .foot {
         flex-direction: column;
@@ -655,5 +601,8 @@ footer {
     .copyrigth span {
         font-size: 12px;
     }
+}
 
- }
+ 
+
+

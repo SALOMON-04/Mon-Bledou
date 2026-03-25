@@ -3,15 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Transaction</title>
-    <link rel="stylesheet" href="Transaction.css" />
+    <title>Budget | MonBledou</title>
+    <link rel="icon" type="image/jpeg" href="../image/logo5.png" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
   </head>
-
+      
   <body>
 
-    
 
+        
          <!--  overlay,  pour que le script retrouve et modifi l'élément (id) et pour le styliser (classe)  -->
 
    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
@@ -28,32 +29,32 @@
          les iconnesont là pour armoniser chaque élément  -->
 
       <ul>
-        <li><a href="Acceuil.html" onclick="toggleMenu()"><i class="fa-solid fa-house"></i> Accueil</a></li>
-        <li><a href="Tableau de bord.html" onclick="toggleMenu()"><i class="fa-solid fa-chart-line"></i> Tableau de bord</a></li>
-        <li><a href="Budget.html" onclick="toggleMenu()"><i class="fa-solid fa-wallet"></i> Budget</a></li>
-        <li><a href="Epargne.html" onclick="toggleMenu()"><i class="fa-solid fa-piggy-bank"></i> Epargne</a></li>
-        <li><a href="" onclick="toggleMenu()"><i class="fa-solid fa-right-left"></i> Transaction</a></li>
+        <li><a href="../index.html" onclick="toggleMenu()"><i class="fa-solid fa-house"></i> Accueil</a></li>
+        <li><a href="../Tableau/Tableau de bord.html" onclick="toggleMenu()"><i class="fa-solid fa-chart-line"></i> Tableau de bord</a></li>
+        <li><a href="" onclick="toggleMenu()"><i class="fa-solid fa-wallet"></i> Budget</a></li>
+        <li><a href="../Epargne/Epargne.html" onclick="toggleMenu()"><i class="fa-solid fa-piggy-bank"></i> Epargne</a></li>
+        <li><a href="../Transaction/Transaction.html" onclick="toggleMenu()"><i class="fa-solid fa-right-left"></i> Transaction</a></li>
         <li><a href="" onclick="toggleMenu()"><i class="fa-solid fa-graduation-cap"></i> Formation</a></li>
       </ul>
     </nav>
   </div>
-
          <!-- le  corps principal de  mon header -->
 
     <header>
       <div class="entete">
-        <img class="logo2" src="image/logo2.jpeg" alt="mon logo" />
-                
-           <!--  <button class="hamburger"> par ceci : -->
+        <img class="logo2" src="../image/logo5.png" alt="mon logo" />
+
+        <!--  <button class="hamburger"> par ceci : -->
 
                <button class="hamburger" onclick="toggleMenu()">☰</button>
+
         <nav>
           <ul>
-            <li><a href="Acceuil.html">Acceuil</a></li>     <!--   il y a un lien a mettre ici -->
-            <li><a href="Tbleau de bord.html">Tableau de bord</a></li>    <!--   il y a un lien a mettre ici -->
-            <li><a href="Budget.html">Budget</a></li>     <!--   il y a un lien a mettre ici -->
-            <li><a href="Epargne.html">Epargne</a></li>     <!--   il y a un lien a mettre ici -->
-            <li><a href="">Transaction</a></li>     <!--   il y a un lien a mettre ici -->
+            <li><a href="../index.html">Acceuil</a></li>     <!--   il y a un lien a mettre ici -->
+            <li><a href="../Tableau/Tableau de bord.html">Tableau de bord</a></li>    <!--   il y a un lien a mettre ici -->
+            <li><a href="">Budget</a></li>     <!--   il y a un lien a mettre ici -->
+            <li><a href="../Epargne/Epargne.html">Epargne</a></li>     <!--   il y a un lien a mettre ici -->
+            <li><a href="../Transaction/Transaction.html">Transaction</a></li>     <!--   il y a un lien a mettre ici -->
             <li><a href="">formation</a></li>     <!--   il y a un lien a mettre ici -->
           </ul>
         </nav>
@@ -62,15 +63,12 @@
 
         <section class="Enregistrer">
          <div class="titre">
-            <h1>Transaction</h1>
-            <span>Suivez tous vos révenus et dépense</span>
+            <h1>Gestion du budget</h1>
+            <span>Définissez et suivez vos limites de dépenses</span>
          </div>
 
          <div class="Ajout">
-            <span><a href="Ajout-Transaction.html">+ Nouvelle transaction</a> </span>   <!--   il y a un lien a mettre ici -->
-         </div>
-
-    </div>
+            <span><a href="">+ Ajouter un budget</a> </span> <!--   il y a un lien a mettre ici -->
          </div>
         </section>
 
@@ -81,10 +79,10 @@
                 <div class="balance">
 
                     <div class="wallet">
-                         <h2>Total des revenus</h2>
+                         <h2>Budget total</h2>
                     </div>
                     <div class="visuel">
-                         <h2 id="totalépagne">0.00 frc</h2>
+                         <h2>0.00 frc</h2>
                     </div>
               </div>
 
@@ -92,35 +90,26 @@
                 <div class="balance">
 
                     <div class="wallet">
-                         <h2>Total des dépenses</h2>
+                         <h2>Depense</h2>
                     </div>
                     <div class="visuel">
-                         <h2 id="atteints">0.00 frc</h2>
+                         <h2 id="Dépense">0.00 frc</h2>
+                    </div>
+                </div>
+
+
+                <div class="balance">
+
+                    <div class="wallet">
+                         <h2>Restant</h2>
+                    </div>
+                    <div class="visuel">
+                         <h2  id="Restant">0.00 frc</h2>
                     </div>
                 </div>
 
 
             </div>
-        </section>
-
-
-
-         <section class="choix">
-
-            <div class="milieu">
-                <span><strong>Types:</strong></span>
-                <div class="tous">
-                    <span>Tous</span>
-                </div>
-            </div>
-
-             <div class="milieu">
-                <span><strong>Catégories:</strong></span>
-                <div class="tous">
-                    <span>Toutes</span>
-                </div>
-            </div>
-
         </section>
 
 
@@ -129,13 +118,13 @@
            
               <div class="transac">
 
-                 <i class="fa-solid fa-bullseye" style="color: rgb(161, 161, 161);"></i>
+                 <i class="fa-solid fa-plus" style="color: rgb(161, 161, 161);"></i>
 
               </div>
 
               <div class="texte">
                  <h3>Aucun budget defini</h3>
-                 <span>Créer vos orémiers objectif d'épargne pour mieux planifier vos projets futurs</span>
+                 <span>Commencez par définir des budgets mensuels pour vos différentes catégories de dépenses</span>
               </div>
 
         </section> 
@@ -145,17 +134,17 @@
         <section class="foot">
           <div class="fonction">
             <h2>Fontionnalité</h2>
-            <span><a href="Tableau de bord.html">Tableau de bord</a></span>   <!--   il y a un lien a mettre ici -->
-            <span><a href="Budget.html">Gestion du budget</a></span>  <!--   il y a un lien a mettre ici -->
-            <span><a href="">Transaction</a></span>     <!--   il y a un lien a mettre ici -->
-            <span><a href="Epargne.html">Objectif d'épargne</a></span>    <!--   il y a un lien a mettre ici -->
+            <span><a href="../Tableau/Tableau de bord.html">Tableau de bord</a></span>   <!--   il y a un lien a mettre ici -->
+            <span><a href="../Budget/Budget.html">Gestion du budget</a></span>    il y a un lien a mettre ici
+            <span><a href="../Transaction/Transaction.html">Transaction</a></span>     <!--   il y a un lien a mettre ici -->
+            <span><a href="">Objectif d'épargne</a></span>    <!--   il y a un lien a mettre ici -->
           </div>
 
           <div class="ressource">
 
             <h2>Ressource</h2>
              <span><a href="">Formation</a></span>  <!--   il y a un lien a mettre ici -->
-            <span><a href="Tableau de bord.html">Commencer</a></span>   <!--   il y a un lien a mettre ici -->
+            <span><a href="../Tableau/Tableau de bord.html">Commencer</a></span>   <!--   il y a un lien a mettre ici -->
           </div>
 
         </section>
@@ -166,8 +155,7 @@
 
       </footer>
 
-               
-        <!-- Cette  fonction JavaScript nous permettras de solidiffier le humberger -->
+          <!-- Cette  fonction JavaScript nous permettras de solidiffier le humberger -->
 
             <script>
               function toggleMenu() {

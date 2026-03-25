@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -5,6 +6,7 @@
 
 body {
     background-color: rgb(229, 229, 229);
+    font-family: 'Poppins',sans-serif !important;
 }
 
  header a {
@@ -24,7 +26,8 @@ header a:hover {
 
 }
 
-  /*  ici se trouve mon le style de mon menu cachez */
+
+ /*  ici se trouve mon le style de mon menu cachez */
     
 .hamburger {
   display: none;
@@ -51,8 +54,7 @@ header a:hover {
   display: block;
 }
 
-    /* panneau latéral */
-
+/* AJOUTER : panneau latéral */
 .menu-lateral {
   position: fixed;
   top: 0;
@@ -73,7 +75,7 @@ header a:hover {
   right: 0;
 }
 
-   /*  bouton fermer */
+   /* bouton fermer */
 
 .fermer-btn {
   background: none;
@@ -89,8 +91,9 @@ header a:hover {
   color: blue;
 }
 
-    /*  liens du menu latéral */
 
+
+    /* liens du menu latéral */
 .nav-lateral ul {
   list-style: none;
   padding: 20px 0;
@@ -122,9 +125,6 @@ header a:hover {
   text-align: center;
   color: rgb(177, 177, 176);
 }
- 
-  /* le style principal de mon header */
-
 nav ul{
   display: flex;
   padding: 30px;
@@ -140,12 +140,18 @@ nav ul{
     height: 130px;
 }
 
-   /* le style du titre Tableau de bord */
 
+       /* la section enregistrement  */
+
+.Enregistrer {
+    display: flex;
+    justify-content: space-around;
+    gap: 30%;
+    padding: 6%;
+    
+}
 .titre {
     font-size: 25px;
-    padding: 6%;
-
 }
 
 .titre h1 {
@@ -153,13 +159,42 @@ nav ul{
     font-size: clamp(35px, 3vw, 40px);
  }
 
+
+ .Ajout {
+    
+    border-radius: 15px;
+    width: 15%;
+    padding: 2%;
+    text-align: center;
+    font-size: 1.2em;
+    font-size: clamp(10px, 3vw, 20px);
+    background-color: blue; 
+    
+ }
+
+ .Ajout:hover {
+     color: #ffffff;
+     transform: scale(1.02);
+     box-shadow: 0 4px 15px rgba(111, 111, 111, 0.74);
+     cursor: pointer;
+ }
+
+
+       /* la section affichache */
+
+
 .indicateur {
     display: flex;
-    justify-content:column ;
+    justify-content:center ;
+    gap: 5%;
+
 
 }
 
-     /* ici se trouve le style de ma section affichage */
+.Ajout a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+ }
 
 .balance {
   
@@ -169,12 +204,15 @@ nav ul{
   width: 15%;
   height: 15%;
   margin: 3%;
-  background-color: #ffffff;
+  background-color: white;
+  
+  
 }
 
 .balance:hover {              
-    transform: scale(1.02);
+     transform: scale(1.02);
      box-shadow: 0 4px 15px rgba(129, 129, 129, 0.816);
+     
 }
 
 .wallet {
@@ -185,35 +223,29 @@ nav ul{
 
 .wallet h2 {
     margin-bottom: 5%;
-    font-size: clamp(20px, 3vw, 30px);
+    
  }
 
-.wallet img {
-    height: 30px;
-}
-
-.wallet i {
-  font-size: 20px;
-}
 
 .visuel {
     padding-top: 10%;
 }
 
-#Epargne {
-    color: rgb(120, 0, 232);
-}
-
-#Dépense {
-    color: rgb(243, 0, 0);
-}
- 
-#Revenus{
-    color: rgb(14, 214, 44);
-}
 
 
-     /* ici se trouve le style de la section .Transaction */
+#totalépagne {
+    color: #b700ff;
+    
+}
+
+#atteints {
+    color: #46e801;
+}
+
+
+
+     
+     /* la section Transaction */
 
 
 .Transaction {
@@ -229,12 +261,11 @@ nav ul{
 
 }
 
-.transac img {
+.transac i {
     margin-left: 50%;
     transform: translate(-50%);
-    width: 80px;             
-    height: 80px;
-    margin-bottom: 25px;
+    font-size: 4em;
+  margin-bottom: 25px;
 
 }
 
@@ -243,13 +274,14 @@ nav ul{
 }
 
 
-     /* ici se trouve le style de mon footer */
+     /* le bas de la page (le footer) */
 
 
 footer {
     padding: 5% 10% 2% 10% ;
     padding-bottom: 2%; 
     background-color: black;
+    margin-top: auto;
     display: flex;          
     flex-direction: column;
      padding: clamp(20px, 5%, 60px) clamp(15px, 10%, 100px);
@@ -318,73 +350,62 @@ footer {
 .copyrigth {
     color: #ffffff;
     text-align: center;
-    margin-top: auto; 
-    padding-top: 10px;
+    margin-top: 30px;   /* ← remplace auto par une valeur fixe */
+    padding-top:0 auto;
 }
+
 
 .copyrigth hr {
     border-color: #444; 
     margin-bottom: 15px;
 }
 
+     
+      /* ici se trouve la responsive lié a chaque type d'écrant */
 
-
-          /* vous trouverez ici les Media Queries (la responsive liée à chaque type d'ecran) */
-
-
-
-          
-     /* le menu en hamburger au niveau du header */
+     
+     
+      /* le menu en hamburger au niveau du header */
 
 @media (max-width: 768px) {
 
-    .hamburger {
-  display: flex;  /* ← flex et non block pour aligner les bars vertical */
+.hamburger {
+  display: flex;  /*  pour aligner les bars vertical */
   font-size: 2em;
-
 }
 
 nav ul {
-  display: none;  /* ← cache la nav bureau */
+  display: none;  /*  cache la nav bureau */
 }
 
  }
 
+        /* ORDINATEUR DE BUREAU (max 1440px) */
 
-     /* BUREAU (max 1440px) */
+   /* Section titre + bouton */
 
 @media (max-width: 1440px) {
 
-       /* Titre */
-
-    .titre {
-        padding: 4%;
+    .Enregistrer {
+        gap: 20%;
+        padding: 5%;
     }
 
-    .titre h1 {
-        font-size: 35px;
-    }
-
-       /* Les 4 cartes */
-
-    .indicateur {
-        display: flex;
-        justify-content: center;
-    }
+    /* Les 3 cartes */
 
     .balance {
-        width: 18%;
-        min-width: 180px;
+        width: 20%;
+        min-width: 200px;
     }
 
-       /* Bloc vide */
+    /* Bloc vide */
 
     .Transaction {
         width: 75%;
         padding: 55px 35px;
     }
 
-       /* Footer */
+      /* Footer */
 
     .foot {
         justify-content: space-around;
@@ -397,29 +418,34 @@ nav ul {
 }
 
 
-   /* PC PERSONNEL (max 1024px) */
+    /* PC PERSONNEL (max 1024px) */
 
 @media (max-width: 1024px) {
 
-      /* Titre */
-
-    .titre {
-        padding: 4% 5%;
+        /* Section titre + bouton */
+    .Enregistrer {
+        gap: 15%;
+        padding: 4%;
     }
 
     .titre h1 {
-        font-size: 28px;
+        font-size: 30px;
     }
 
-       /* Les 4 cartes */
+    .Ajout {
+        width: 20%;
+        padding: 15px;
+    }
+
+      /* Les 3 cartes */
 
     .balance {
-        width: 22%;
-        min-width: 160px;
+        width: 25%;
+        min-width: 180px;
     }
 
     .wallet h2 {
-        font-size: 16px;
+        font-size: 15px;
     }
 
       /* Bloc vide */
@@ -444,13 +470,16 @@ nav ul {
 
 
 
-/* TABLETTE (max 768px) */
+   /* TABLETTE (max 768px) */
 
 @media (max-width: 768px) {
 
-      /* Titre */
+      /* Section titre + bouton */
 
-    .titre {
+    .Enregistrer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
         padding: 5% 5%;
     }
 
@@ -458,7 +487,12 @@ nav ul {
         font-size: 25px;
     }
 
-       /* Les 4 cartes */
+    .Ajout {
+        width: auto;
+        padding: 12px 20px;
+    }
+
+      /* Les 3 cartes en colonne */
 
     .indicateur {
         flex-wrap: wrap;
@@ -469,10 +503,6 @@ nav ul {
         width: 40%;
         min-width: 150px;
         margin: 10px;
-    }
-
-    .wallet h2 {
-        font-size: 15px;
     }
 
        /* Bloc vide */
@@ -494,11 +524,11 @@ nav ul {
 
 
 
-   /* MOBILE (max 480px) */
+     /* MOBILE (max 480px) */
 
 @media (max-width: 480px) {
 
-    .entete {
+ .entete {
        
         flex-direction: row;
         justify-content: space-around;
@@ -511,7 +541,7 @@ nav ul {
 
          /* hamburger */
 
-        .hamburger {
+             .hamburger {
         display: block;
         font-size: 2em;
         background: none;
@@ -526,10 +556,12 @@ nav ul {
         width: 80px;
         height: 80px;
     }
+    
+       /* Section titre + bouton */
 
-      /* Titre */
-
-    .titre {
+    .Enregistrer {
+        flex-direction: column;
+        gap: 15px;
         padding: 6% 5%;
     }
 
@@ -541,7 +573,14 @@ nav ul {
         font-size: 13px;
     }
 
-       /* Les 4 cartes en colonne */
+    .Ajout {
+        width: auto;
+        padding: 12px 20px;
+        align-self: flex-start;
+        font-size: 13px;
+    }
+
+       /* Les 3 cartes */
 
     .indicateur {
         flex-direction: column;
@@ -570,9 +609,8 @@ nav ul {
         margin: 25px auto;
     }
 
-    .transac img {
-        width: 60px;
-        height: 60px;
+    .transac i {
+        font-size: 3em;
     }
 
     .texte h3 {
@@ -583,7 +621,7 @@ nav ul {
         font-size: 13px;
     }
 
-      /* Footer */
+       /* Footer */
 
     .foot {
         flex-direction: column;
@@ -600,7 +638,3 @@ nav ul {
         font-size: 12px;
     }
 }
-
- 
-
-

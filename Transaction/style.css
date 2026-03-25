@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -5,6 +6,7 @@
 
 body {
     background-color: rgb(229, 229, 229);
+    font-family: 'Poppins',sans-serif !important;
 }
 
  header a {
@@ -21,7 +23,6 @@ header a:hover {
     justify-content: space-between;
     margin-left: 10%;
     
-
 }
 
 
@@ -52,7 +53,8 @@ header a:hover {
   display: block;
 }
 
-/* AJOUTER : panneau latéral */
+    /* panneau latéral */
+
 .menu-lateral {
   position: fixed;
   top: 0;
@@ -73,7 +75,7 @@ header a:hover {
   right: 0;
 }
 
-   /* bouton fermer */
+   /*  bouton fermer */
 
 .fermer-btn {
   background: none;
@@ -89,9 +91,8 @@ header a:hover {
   color: blue;
 }
 
+    /*  liens du menu latéral */
 
-
-    /* liens du menu latéral */
 .nav-lateral ul {
   list-style: none;
   padding: 20px 0;
@@ -123,6 +124,9 @@ header a:hover {
   text-align: center;
   color: rgb(177, 177, 176);
 }
+
+     /* le style de base de mon header */
+
 nav ul{
   display: flex;
   padding: 30px;
@@ -161,7 +165,7 @@ nav ul{
  .Ajout {
     
     border-radius: 15px;
-    width: 15%;
+    width: 20%;
     padding: 2%;
     text-align: center;
     font-size: 1.2em;
@@ -176,6 +180,7 @@ nav ul{
      box-shadow: 0 4px 15px rgba(111, 111, 111, 0.74);
      cursor: pointer;
  }
+
 
 
        /* la section affichache */
@@ -199,8 +204,8 @@ nav ul{
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(105, 105, 105, 0.05);
   padding: 2%;
-  width: 15%;
-  height: 15%;
+  width: 20%;
+  height: 20%;
   margin: 3%;
   background-color: white;
   
@@ -242,6 +247,44 @@ nav ul{
 
 
 
+  /* la section de choix des catégorie de transaction */
+
+.choix {
+     display: flex;
+     justify-content: space-around;
+     background-color: #ffffff;
+     box-shadow:0 4px 15px rgba(199, 197, 197, 0.727) ;
+     border-radius: 15px;
+     padding: 1%;
+     width: 68%;
+     margin: 0 auto;
+     align-items: center;
+
+}
+
+.milieu {
+    display: flex;
+    align-items: center;
+    gap: 15%;
+
+}
+
+
+.tous {
+    padding: 5%;
+    width: 70px;
+    margin-left:5% ;
+    background-color: gray;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+.tous:hover {
+    transform: scale(1.02);
+}
+
+
      
      /* la section Transaction */
 
@@ -279,7 +322,6 @@ footer {
     padding: 5% 10% 2% 10% ;
     padding-bottom: 2%; 
     background-color: black;
-    margin-top: auto;
     display: flex;          
     flex-direction: column;
      padding: clamp(20px, 5%, 60px) clamp(15px, 10%, 100px);
@@ -348,55 +390,42 @@ footer {
 .copyrigth {
     color: #ffffff;
     text-align: center;
-    margin-top: 30px;   /* ← remplace auto par une valeur fixe */
-    padding-top:0 auto;
+    margin-top: auto; 
+    padding-top: 10px;
 }
-
 
 .copyrigth hr {
     border-color: #444; 
     margin-bottom: 15px;
 }
 
-     
-      /* ici se trouve la responsive lié a chaque type d'écrant */
 
-     
-     
-      /* le menu en hamburger au niveau du header */
 
-@media (max-width: 768px) {
-
-.hamburger {
-  display: flex;  /*  pour aligner les bars vertical */
-  font-size: 2em;
-}
-
-nav ul {
-  display: none;  /*  cache la nav bureau */
-}
-
- }
-
-        /* ORDINATEUR DE BUREAU (max 1440px) */
-
-   /* Section titre + bouton */
+   /*  ORDINATEUR DE BUREAU (max 1440px) */
 
 @media (max-width: 1440px) {
+
+      /* Section titre + bouton */
 
     .Enregistrer {
         gap: 20%;
         padding: 5%;
     }
 
-    /* Les 3 cartes */
+      /* Les 2 cartes */
 
     .balance {
-        width: 20%;
+        width: 25%;
         min-width: 200px;
     }
 
-    /* Bloc vide */
+      /* Section choix */
+
+    .choix {
+        width: 65%;
+    }
+
+      /* Bloc vide */
 
     .Transaction {
         width: 75%;
@@ -415,35 +444,44 @@ nav ul {
     }
 }
 
+  
 
-    /* PC PERSONNEL (max 1024px) */
+     /*  PC PERSONNEL (max 1024px) */
 
 @media (max-width: 1024px) {
 
-        /* Section titre + bouton */
+      /* Section titre + bouton */
+
     .Enregistrer {
         gap: 15%;
         padding: 4%;
     }
 
     .titre h1 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .Ajout {
-        width: 20%;
+        width: 25%;
         padding: 15px;
     }
 
-      /* Les 3 cartes */
+      /* Les 2 cartes */
 
     .balance {
-        width: 25%;
+        width: 28%;
         min-width: 180px;
     }
 
     .wallet h2 {
         font-size: 15px;
+    }
+
+      /* Section choix */
+
+    .choix {
+        width: 75%;
+        padding: 1.5%;
     }
 
       /* Bloc vide */
@@ -468,11 +506,25 @@ nav ul {
 
 
 
-   /* TABLETTE (max 768px) */
+      /* TABLETTE (max 768px) */
 
 @media (max-width: 768px) {
 
-      /* Section titre + bouton */
+        /* Header */
+.hamburger {
+        display: block;  
+    }
+
+    nav ul {
+        display: none;  
+    }
+
+    .entete {
+        margin-left: 0;
+        padding: 10px 20px;
+    }
+
+        /* Section titre + bouton */
 
     .Enregistrer {
         flex-direction: column;
@@ -490,7 +542,7 @@ nav ul {
         padding: 12px 20px;
     }
 
-      /* Les 3 cartes en colonne */
+       /* Les 2 cartes */
 
     .indicateur {
         flex-wrap: wrap;
@@ -501,6 +553,18 @@ nav ul {
         width: 40%;
         min-width: 150px;
         margin: 10px;
+    }
+
+       /* Section choix */
+
+    .choix {
+        width: 88%;
+        padding: 2%;
+        gap: 10px;
+    }
+
+    .milieu {
+        gap: 10%;
     }
 
        /* Bloc vide */
@@ -521,17 +585,17 @@ nav ul {
 }
 
 
-
      /* MOBILE (max 480px) */
 
 @media (max-width: 480px) {
 
- .entete {
+      
+     .entete {
        
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
-        padding: 10px 15px;
+        padding: 8px 15px;
         margin-left: 0;
         gap: 50%;
         
@@ -539,7 +603,7 @@ nav ul {
 
          /* hamburger */
 
-             .hamburger {
+        .hamburger {
         display: block;
         font-size: 2em;
         background: none;
@@ -554,8 +618,8 @@ nav ul {
         width: 80px;
         height: 80px;
     }
-    
-       /* Section titre + bouton */
+
+        /* Section titre + bouton */
 
     .Enregistrer {
         flex-direction: column;
@@ -574,11 +638,10 @@ nav ul {
     .Ajout {
         width: auto;
         padding: 12px 20px;
-        align-self: flex-start;
         font-size: 13px;
     }
 
-       /* Les 3 cartes */
+      /* Les 2 cartes en colonne */
 
     .indicateur {
         flex-direction: column;
@@ -599,7 +662,26 @@ nav ul {
         font-size: 20px;
     }
 
-      /* Bloc vide */
+        /* Section choix */
+
+    .choix {
+        width: 92%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 4%;
+    }
+
+    .milieu {
+        gap: 10px;
+    }
+
+    .tous {
+        width: 60px;
+        padding: 4%;
+    }
+
+       /* Bloc vide */
 
     .Transaction {
         width: 92%;
@@ -636,3 +718,12 @@ nav ul {
         font-size: 12px;
     }
 }
+
+
+
+
+
+
+
+
+
