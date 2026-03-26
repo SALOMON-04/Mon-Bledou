@@ -525,9 +525,7 @@ nav ul {
         width: 400px;
     }
 
-    .block {
-        padding-top: 40%;
-    }
+    
 }
 
 
@@ -549,6 +547,10 @@ nav ul {
 
     .motivation span {
         width: 350px;
+    }
+
+    .block {
+        margin-top: 45%;
     }
 
     .droite {
