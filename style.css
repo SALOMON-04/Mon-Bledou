@@ -504,11 +504,11 @@ nav ul{
 @media (max-width: 768px) {
 
     .hamburger {
-  display: flex;  /* ← flex et non block pour aligner les bars vertical */
+  display: flex;  /*  flex et non block pour aligner les bars vertical */
 }
 
 nav ul {
-  display: none;  /* ← cache la nav bureau */
+  display: none;  /*  cache la nav bureau */
 }
 
  }
@@ -523,6 +523,10 @@ nav ul {
 
     .motivation span {
         width: 400px;
+    }
+
+    .block {
+        padding-top: 40%;
     }
 }
 
